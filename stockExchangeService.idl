@@ -12,13 +12,10 @@ module StockExchangeService
 
   interface Service
   {
-    typedef sequence<StockPrice> stockPriceData;
-
     string getAvailableStockExchanges();
     StockPrice getLastQuotationByTickerAndStockExchange(in string ticker, in string stockExchange);
     boolean addNewQuotation(in StockPrice stockPrice, in string stockExchange);
     boolean addNewStockExchange(in string stockExchange);
-
   };
 
 };
