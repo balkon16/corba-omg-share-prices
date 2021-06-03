@@ -1,0 +1,25 @@
+module StockExchangeService
+{
+
+  interface StockPrice
+  {
+    attribute string ticker;
+    attribute double price;
+    attribute string currency;
+    attribute long measurementDateTime;
+    attribute string stockExchange;
+  };
+
+  interface Service
+  {
+    typedef sequence<StockPrice> stockPriceData;
+    typedef sequence<string> stringSequence;
+
+    stringSequence getAvailableStockExchanges();
+    StockPrice getLastQuotation(in string ticker, in string stockExchange);
+    boolean addNewQuotation(in StockPrice stockPrice, in string stockExchange);
+    boolean addNewStockExchange(in string stockExchange);
+
+  };
+
+};
