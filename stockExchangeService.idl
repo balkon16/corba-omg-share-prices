@@ -13,10 +13,9 @@ module StockExchangeService
   interface Service
   {
     typedef sequence<StockPrice> stockPriceData;
-    typedef sequence<string> stringSequence;
 
-    stringSequence getAvailableStockExchanges();
-    StockPrice getLastQuotation(in string ticker, in string stockExchange);
+    string getAvailableStockExchanges();
+    StockPrice getLastQuotationByTickerAndStockExchange(in string ticker, in string stockExchange);
     boolean addNewQuotation(in StockPrice stockPrice, in string stockExchange);
     boolean addNewStockExchange(in string stockExchange);
 
